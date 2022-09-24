@@ -1,6 +1,6 @@
 # Haouarihk.com ⚡️
 
-## made using [Qwik Github](https://github.com/BuilderIO/qwik)
+## made using [Qwik](https://github.com/BuilderIO/qwik)
 
 ## Project Structure
 
