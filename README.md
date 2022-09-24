@@ -1,21 +1,12 @@
-# Qwik App ⚡️
+# Haouarihk.com ⚡️
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik Github](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
-- [Partytown](https://partytown.builder.io/)
-- [Mitosis](https://github.com/BuilderIO/mitosis)
-- [Builder.io](https://www.builder.io/)
-
----
+## made using [Qwik Github](https://github.com/BuilderIO/qwik)
 
 ## Project Structure
 
 Inside of you project, you'll see the following directories and files:
 
-```
+```routes
 ├── public/
 │   └── ...
 └── src/
@@ -35,7 +26,7 @@ Inside of you project, you'll see the following directories and files:
 
 Use the `npm run qwik add` command to add other integrations. Some examples of integrations include as a Cloudflare, Netlify or Vercel server, and the Static Site Generator (SSG).
 
-```
+```cmd
 npm run qwik add
 ```
 
@@ -43,7 +34,7 @@ npm run qwik add
 
 Development mode uses [Vite's development server](https://vitejs.dev/). For Qwik during development, the `dev` command will also server-side render (SSR) the output. The client-side development modules loaded by the browser.
 
-```
+```cmd
 npm run dev
 ```
 
@@ -53,7 +44,7 @@ npm run dev
 
 The preview command will create a production build of the client modules, production build of `src/entry.preview.tsx`, and create a local server. The preview server is only for convenience to locally preview a production build, but it should not be used as a production server.
 
-```
+```cmd
 npm run preview
 ```
 
@@ -61,6 +52,6 @@ npm run preview
 
 The production build should generate the client and server modules by running both client and server build commands. Additionally, the build command will use Typescript run a type check on the source.
 
-```
+```cmd
 npm run build
 ```
