@@ -1,8 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import User from "../user";
+import Darkmode from "./darkmode";
 
-export const links:{[key:string]:string} = {
+export const links: { [key: string]: string } = {
   Main: "/",
   Projects: "/projects",
   Submissions: "/submissions",
@@ -15,7 +16,11 @@ export const LinkItem = component$((props: { to: string; name: string }) => {
     <li>
       <a
         href={props.to}
-        class={currentPage ? "block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white":"block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"}
+        class={
+          currentPage
+            ? "block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+            : "block py-2 pr-4 pl-3 text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+        }
         aria-current="page"
       >
         {props.name}
@@ -26,13 +31,10 @@ export const LinkItem = component$((props: { to: string; name: string }) => {
 
 export default component$(() => {
   return (
-    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+    <nav class="fixed z-20 text-white top-0 w-screen bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
       <div class="container flex flex-wrap justify-between items-center mx-auto">
-       
-       <div>
-        <User/>
-       </div>
-
+        <User size={64} className="h-12" />
+        <Darkmode />
         <button
           data-collapse-toggle="navbar-default"
           type="button"
@@ -55,9 +57,12 @@ export default component$(() => {
             />
           </svg>
         </button>
+
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            {Object.keys(links).map(name=><LinkItem name={name} to={links[name]}/>)}
+          <ul class="flex flex-col p-4 mt-4 text-white rounded-lg border  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            {Object.keys(links).map((name) => (
+              <LinkItem name={name} to={links[name]} />
+            ))}
           </ul>
         </div>
       </div>

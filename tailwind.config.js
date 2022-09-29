@@ -10,5 +10,5 @@ module.exports = {
       black: "#040406"
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
