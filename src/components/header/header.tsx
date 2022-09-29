@@ -31,7 +31,7 @@ export const LinkItem = component$((props: { to: string; name: string }) => {
 
 export default component$(() => {
   return (
-    <nav class="fixed z-20 text-white top-0 w-screen bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+    <nav class="fixed z-20 select-none text-white top-0 w-screen bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
       <div class="container flex flex-wrap justify-between items-center mx-auto">
         {/* <User size={64} className="h-12" /> */}
         <Darkmode />
