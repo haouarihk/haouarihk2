@@ -14,7 +14,7 @@ export default component$(() => {
       }}
     >
       <div
-        class="fixed w-screen h-screen bg-fill bg-no-repeat"
+        class="fixed w-screen h-screen"
         style={{
           background: `linear-gradient(
             rgba(0, 0, 20, 0.8),
