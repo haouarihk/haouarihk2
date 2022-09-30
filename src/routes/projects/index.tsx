@@ -13,13 +13,13 @@ export const projects = [
 
 export default component$(() => {
   return (
-    <div class="z-30 text-white flex flex-wrap overflow-auto mt-20 justify-evenly items-center h-full">
+    <div class="z-30 text-white flex flex-wrap gap-8 overflow-auto mt-20 justify-evenly items-center ">
       {projects.map((e) => (
         <div key={e.name} class="card w-96 shadow-xl image-full">
           <figure>
             <img src={e.image} alt="Shoes" />
           </figure>
-          <div class="card-body ">
+          <div class="card-body">
             <h2 class="card-title">{e.name}</h2>
             <p>{e.description}</p>
             <div class="card-actions justify-end">

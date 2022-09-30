@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStore } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import User from "../user";
 import Darkmode from "./darkmode";
@@ -30,8 +30,11 @@ export const LinkItem = component$((props: { to: string; name: string }) => {
 });
 
 export default component$(() => {
+  const store = useStore({
+    open: false,
+  });
   return (
-    <nav class="fixed z-20 select-none text-white top-0 w-screen bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+    <nav class="fixed z-30 select-none text-white top-0 w-screen bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
       <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/cv.pdf" class="btn gap-3 hidden xl:flex">
           <img
@@ -47,6 +50,7 @@ export default component$(() => {
           class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-default"
           aria-expanded="false"
+          onClick$={() => (store.open = !store.open)}
         >
           <span class="sr-only">Open main menu</span>
           <svg
@@ -71,6 +75,16 @@ export default component$(() => {
             ))}
           </ul>
         </div>
+
+        {store.open && (
+          <div class="w-full md:w-auto" id="navbar-default">
+            <ul class="flex flex-col p-4 mt-4 text-white bg-black rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              {Object.keys(links).map((name) => (
+                <LinkItem name={name} to={links[name]} />
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </nav>
   );
