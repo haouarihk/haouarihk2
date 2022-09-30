@@ -9,6 +9,10 @@ export default component$(() => {
           qwik
         </a>
       </div>
+      <div class="hidden xl:block text-xs">
+        if you use dark reader extension, you won't be able to see the
+        background animations
+      </div>
       <div class="flex gap-2 justify-end ">
         <svg
           viewBox="0 0 16 16"
