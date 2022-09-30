@@ -6,13 +6,12 @@ import User from "~/components/user";
 export default component$(() => {
   const btns = (
     <>
-      <a href="/cv.pdf" class="btn flex gap-3">
+      <a href="/cv.pdf" class="btn flex xl:hidden gap-3">
         <img
           width={20}
           height={20}
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/833px-PDF_file_icon.svg.png"
         />
-        {/* CV */}
       </a>
       <a href="/projects" class="btn btn-primary w-24">
         Projects
@@ -36,8 +35,9 @@ export default component$(() => {
               {btns}
             </div>
           </div>
-          <div class="flex flex-col gap-12 min-w-fit">
+          <div class="flex kk flex-col gap-12 min-w-fit hover:border-x-2 active:border-x-0 active:border-y-2 transition-all border-white">
             <User className="flex-col" />
+
             <div class="flex justify-between items-center w-full md:hidden">
               {btns}
             </div>

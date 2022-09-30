@@ -7,6 +7,7 @@ export default component$(
     onlyPfp?: boolean;
     online?: boolean;
     ring?: boolean;
+    children?: any;
   }) => {
     return (
       <div class={`flex gap-4 items-center ${props.className}`}>
@@ -16,9 +17,10 @@ export default component$(
           }`}
         >
           <img
+            draggable="false"
             height={props.size}
             width={props.size}
-            class="bg-pink-400 rounded-full overflow-hidden"
+            class="bg-pink-400  rounded-full overflow-hidden"
             src="/pfp.jpeg"
           />
         </div>
@@ -28,6 +30,7 @@ export default component$(
             <div class="text-center">
               <p class="text-xl inline md:block">Haouari </p> Haitam Kouider
             </div>
+            {props.children}
           </>
         )}
       </div>

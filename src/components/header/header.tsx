@@ -33,7 +33,13 @@ export default component$(() => {
   return (
     <nav class="fixed z-20 select-none text-white top-0 w-screen bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
       <div class="container flex flex-wrap justify-between items-center mx-auto">
-        {/* <User size={64} className="h-12" /> */}
+        <a href="/cv.pdf" class="btn gap-3 hidden xl:flex">
+          <img
+            width={20}
+            height={20}
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/833px-PDF_file_icon.svg.png"
+          />
+        </a>
         <Darkmode />
         <button
           data-collapse-toggle="navbar-default"

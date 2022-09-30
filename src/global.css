@@ -9,3 +9,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.kk:before {
+  content: "";
+  z-index: 20;
+  background: "blue";
+  //background-image: conic-gradient(#141f14 20deg, transparent 10deg);
+  position: absolute;
+  left: -25%;
+  top: -25%;
+}
